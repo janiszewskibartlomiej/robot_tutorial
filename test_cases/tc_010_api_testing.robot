@@ -56,6 +56,12 @@ TC_004 get request with parameters
     ${name}=    get from list    ${name_list}    0
     log to console    name >> ${name}
 
+    ${response1}=    delete on session    connection    ${end_point}/${id}
+    ${response2}=    put on session    connection    ${end_point}/${id}
+    ${response3}=    post on session    connection    ${end_point}/${id}
+
+
+
 
 TC_005 delete request
     create session    connection    ${URL}
@@ -88,6 +94,9 @@ TC_007 put request - update resource
     ${response1}=    get on session    up_data    ${end_point}/1818
 
     log to console    ${response1.content}
+
+
+
 *** Keywords ***
 
 
